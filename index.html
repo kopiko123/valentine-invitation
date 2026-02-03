@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine Invitation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      overflow: hidden;
+    }
+
+    /* 💕 Floating hearts background */
+    .floating-hearts span {
+      position: absolute;
+      bottom: -50px;
+      font-size: 24px;
+      animation: float 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    .floating-hearts span:nth-child(1) { left: 10%; animation-duration: 8s; }
+    .floating-hearts span:nth-child(2) { left: 25%; animation-duration: 12s; }
+    .floating-hearts span:nth-child(3) { left: 40%; animation-duration: 9s; }
+    .floating-hearts span:nth-child(4) { left: 55%; animation-duration: 11s; }
+    .floating-hearts span:nth-child(5) { left: 70%; animation-duration: 10s; }
+    .floating-hearts span:nth-child(6) { left: 85%; animation-duration: 13s; }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .card {
+      background: white;
+      width: 90%;
+      max-width: 420px;
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: pop 1s ease;
+      z-index: 2;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .heart {
+      font-size: 50px;
+      animation: beat 1.2s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .yes:hover {
+      background: #ff1e4d;
+    }
+
+    .no {
+      background: #eee;
+      color: #555;
+    }
+
+    .no:hover {
+      transform: translateX(20px);
+    }
+
+    .message {
+      margin-top: 25px;
+      color: #ff4d6d;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+      <div class="floating-hearts">
+    <span>💖</span>
+    <span>💕</span>
+    <span>💗</span>
+    <span>❤️</span>
+    <span>💘</span>
+    <span>💓</span>
+    <span>💝</span>
+    <span>😍</span>
+    <span>💞</span>
+    <span>❣️</span>
+    <span>💟</span>
+    <span>💗</span>
+  </div>
+
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h1>Hi Devine Grace</h1>
+    <h2>Will you be my Valentine?</h2>
+    <p>
+      This little page is just for you. 💕
+      I was wondering if you’d like to spend Valentine’s Day with me
+      and make it extra special together.
+      <br /><br />
+      I love you so much!
+    </p>
+
+      <div class="floating-hearts">
+    <span>💖</span>
+    <span>💕</span>
+    <span>💗</span>
+    <span>❤️</span>
+    <span>💘</span>
+    <span>💓</span>
+    <span>💝</span>
+    <span>😍</span>
+    <span>💞</span>
+    <span>❣️</span>
+    <span>💟</span>
+    <span>💗</span>
+  </div>
+
+    <div class="buttons">
+      <button class="yes" onclick="accept()">Yes 💖</button>
+      <button class="no">No 🙈</button>
+    </div>
+
+    <div class="message" id="message">
+      Yay! I’m so happy! 💕🌹
+    </div>
+  </div>
+
+  <script>
+    function accept() {
+      document.getElementById('message').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
